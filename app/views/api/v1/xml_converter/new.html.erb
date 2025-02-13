@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lcm Contadores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 500px; /* Increased width */
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #8B0000; /* Dark red color */
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    textarea {
+      height: 200px; /* Increased height */
+    }
+    input[type="submit"] {
+      background-color: #8B0000; /* Dark red color */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #6B0000; /* Darker red color for hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Conversor XML - LCM Contadores</h1>
+    <form action="/api/v1/xml_converter" method="post">
+      <label for="nfe_keys">Chaves de acesso da NFe (um por linha):</label>
+      <textarea name="nfe_keys" id="nfe_keys" rows="10" cols="50"></textarea>
+      <br>
+      <label for="customer">Cliente:</label>
+      <input type="text" name="customer" id="customer">
+      <br>
+      <input type="submit" value="Convert">
+    </form>
+  </div>
+</body>
+</html>
