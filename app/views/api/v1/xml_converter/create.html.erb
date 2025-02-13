@@ -1,0 +1,67 @@
+<!-- filepath: /home/luan/study/nfe_xml_generator/app/views/api/v1/xml_converter/create.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor XML - LCM Contadores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 500px; /* Increased width */
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #8B0000; /* Dark red color */
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #8B0000; /* Dark red color */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .download-link {
+      color: #0000FF; /* Blue color */
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor XML - LCM Contadores</h1>
+    <p>Seus XML Estão prontos! Acesse-os em:</p>
+    <p><a href="<%= @tar_gz_file_path.sub(Rails.root.join('public').to_s, '') %>" download class="download-link">Baixe a pasta aqui</a></p>
+    <p>Ou acesse cada um separadamente abaixo:</p>
+    <ul>
+      <% @file_paths.each do |file_path| %>
+        <li><a href="<%= file_path %>"><%= File.basename(file_path) %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</body>
+</html>
