@@ -14,7 +14,7 @@ class Api::V1::XmlConverterController < ApplicationController
     @file_paths = interactor.full_file_paths.map { |path| path ? path.sub(Rails.root.join('public').to_s, '') : nil }.compact
 
     respond_to do |format|
-      format.html # Renders the HTML view
+      format.html
       format.json { render json: { message: "Seus XML Estão prontos! Acesse-os em #{@tar_gz_file_path}" } }
     end
   end
