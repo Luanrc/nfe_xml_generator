@@ -57,6 +57,8 @@ class XmlConverterInteractor
     escaped_temp_folder = Shellwords.escape(temp_folder)
     escaped_tar_gz_file = Shellwords.escape(tar_gz_file)
 
+    system("tar -czvf #{escaped_tar_gz_file} -C #{File.dirname(escaped_temp_folder)} #{File.basename(escaped_temp_folder)}")
+
     FileUtils.rm_rf(temp_folder)
 
     tar_gz_file
